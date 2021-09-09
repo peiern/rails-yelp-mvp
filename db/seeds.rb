@@ -5,7 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Seeding..."
+puts 'Seeding...'
 
+5.times do
+  restaurant = Restaurant.new(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber,
+    category: 'chinese',
+  )
+  puts "creating restaurant #{restaurant.name}"
+  restaurant.save!
+end
 
-puts "Seeding done!"
+puts 'Seeding done!'
