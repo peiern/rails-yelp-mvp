@@ -2,5 +2,13 @@
 <p>Address: <%= @restaurant.address %></p>
 <p>Contact: <%= @restaurant.phone_number %></p>
 <p>Category: <%= @restaurant.category %></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <h5>Reviews: </h5>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Back to Restaurants', restaurants_path %>
+<%= link_to 'Edit restaurant Details', edit_restaurant_path(@restaurant) %>
+<%= link_to 'Add a comment', new_restaurant_review_path(@restaurant) %>
