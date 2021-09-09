@@ -1,3 +1,8 @@
-<%= render @restaurant %>
-<br>
-<%= link_to 'Back to restaurant detail page', restaurant_path(@restaurant) %>
+<div class="container">
+  <h2>Edit your restaurant details</h2>
+  <%= render @restaurant %>
+  <br>
+  <div class="border-top pt-3">
+  <span class="btn btn-outline-secondary"><i class="far fa-hand-point-left" style="margin:5px;"></i><%= link_to 'Back to restaurant detail page', restaurant_path(@restaurant) %></span>
+  </div>
+</div>

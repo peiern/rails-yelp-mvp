@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :find_id
-
   def create
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new(review_params)
     @review.restaurant = @restaurant
     if @review.save
@@ -12,10 +11,6 @@ class ReviewsController < ApplicationController
   end
 
   private
-
-  def find_id
-    @restaurant = Restaurant.find(params[:restaurant_id])
-  end
 
   def review_params
     params.require(:review).permit(:content, :rating)

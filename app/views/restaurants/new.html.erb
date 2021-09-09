@@ -1,5 +1,7 @@
-<h2>Enter new restaurant details</h2>
+<div class="container">
+  <h2>Enter new restaurant details</h2>
 
-<%= render @restaurant %>
-<br>
-<%= link_to 'Back to restaurants list', restaurants_path %>
+  <%= render @restaurant %>
+  <br>
+  <span class="btn btn-outline-secondary"><i class="far fa-hand-point-left" style="margin:5px;"></i><%= link_to 'Back to restaurants list', restaurants_path %></span>
+</div>
